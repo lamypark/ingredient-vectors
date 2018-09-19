@@ -1,6 +1,6 @@
 ## Ingredient-Vectors
 
-### This code is mostly borrowed from https://github.com/inejc/paragraph-vectors/"
+### "This code is mostly borrowed from https://github.com/inejc/paragraph-vectors/"
 
 A PyTorch implementation of Paragraph Vectors (doc2vec).
 
