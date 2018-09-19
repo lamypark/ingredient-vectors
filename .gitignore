@@ -1,3 +1,11 @@
+# User-generated folders
+data/*.csv
+!data/*.py
+!data/flavordb_ver3.0.csv
+diagnostics/*.csv
+diagnostics/*.png
+models/*.pth.tar
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
