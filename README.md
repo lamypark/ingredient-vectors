@@ -1,13 +1,6 @@
-## Paragraph Vectors
-[![Build Status](https://travis-ci.org/inejc/paragraph-vectors.svg?branch=master)](https://travis-ci.org/inejc/paragraph-vectors)
-[![codecov](https://codecov.io/gh/inejc/paragraph-vectors/branch/master/graph/badge.svg)](https://codecov.io/gh/inejc/paragraph-vectors)
-[![codebeat badge](https://codebeat.co/badges/e5008ad0-240c-48e9-a158-2547989b798e)](https://codebeat.co/projects/github-com-inejc-paragraph-vectors-master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c865067aa4194184ae0c649b865b1fd2)](https://www.codacy.com/app/inejc/paragraph-vectors?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=inejc/paragraph-vectors&amp;utm_campaign=Badge_Grade)
+## Ingredient-Vectors
 
 A PyTorch implementation of Paragraph Vectors (doc2vec).
-<p align="center">
-    <img src="/.github/dmdbow.png?raw=true"/>
-</p>
 
 All models minimize the Negative Sampling objective as proposed by T. Mikolov et al. [1]. This provides scope for sparse updates (i.e. only vectors of sampled noise words are used in forward and backward passes). In addition to that, batches of training data (with noise sampling) are generated in parallel on a CPU while the model is trained on a GPU.
 
