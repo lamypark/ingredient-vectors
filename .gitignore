@@ -2,6 +2,7 @@
 data/*.csv
 !data/*.py
 !data/flavordb_ver3.0.csv
+!data/flavordb_ver2.0.csv
 diagnostics/*.csv
 diagnostics/*.png
 models/*.pth.tar
