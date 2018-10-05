@@ -30,8 +30,19 @@ text,...
 ```
 2. Run [train.py](paragraphvec/train.py) with selected parameters (models are saved in the [models](models) directory).
 ```bash
-python train.py start --data_file_name 'example.csv' --num_epochs 100 --batch_size 32 --num_noise_words 2 --vec_dim 100 --lr 1e-3
+python train.py start --data_file_name ‘flavordb_ver2.0.csv’ --num_epochs 100 --batch_size 32 --num_noise_words 2 --vec_dim 100 --lr 1e-3 --model_ver dm --context_size 5
 ```
+
+3. Export trained paragraph vectors to a csv file (vectors are saved in the [data](data) directory).
+```bash
+python export_vectors.py start --data_file_name ‘flavordb_ver2.0.csv’ --model_file_name ‘flavordb_ver2.0_model.dm.sum_contextsize.5_numnoisewords.2_vecdim.100_batchsize.32_lr.0.001000_epoch.71_loss.0.044957_embed.0.pth.ta'
+```
+
+4. Plot
+```bash
+python run.py start --vocab_file D6_ingredient_vocab.pkl  --embed_file “flavordb_ver2.0_model.dm.sum_contextsize.5_numnoisewords.2_vecdim.100_batchsize.32_lr.0.001000_epoch.71_loss.0.044957_embed.0.csv” --embed_type “fdb”
+```
+
 
 #### Parameters
 * **`data_file_name`**: str\
@@ -61,27 +72,10 @@ Maximum number of pre-generated batches.
 * **`num_workers`**: int, default=1\
 Number of batch generator jobs to run in parallel. If value is set to -1, total number of machine CPUs is used. Note that order of batches is not guaranteed when **`num_workers`** > 1.
 
-3. Export trained paragraph vectors to a csv file (vectors are saved in the [data](data) directory).
-```bash
-python export_vectors.py start --data_file_name 'example.csv' --model_file_name 'example_model.dbow_numnoisewords.2_vecdim.100_batchsize.32_lr.0.001000_epoch.25_loss.0.981524.pth.tar'
-```
-
 #### Parameters
 * **`data_file_name`**: str\
 Name of a file in the *data* directory that was used during training.
 * **`model_file_name`**: str\
 Name of a file in the *models* directory (a model trained on the **`data_file_name`** dataset).
-
-### Example of trained vectors
-First two principal components (1% cumulative variance explained) of 300-dimensional document vectors trained on arXiv abstracts. Shown are two subcategories from Computer Science. Dataset was comprised of 74219 documents and 91417 unique words.
-<p align="center">
-    <img src="/.github/learned_vectors_pca.png?raw=true"/>
-</p>
-
-### Resources
-* [1] [Distributed Representations of Words and Phrases and their Compositionality, T. Mikolov et al.](https://arxiv.org/abs/1310.4546)
-* [2] [Learning word embeddings efficiently with noise-contrastive estimation, A. Mnih et al.](http://papers.nips.cc/paper/5165-learning-word-embeddings-efficiently-with)
-* [3] [Notes on Noise Contrastive Estimation and Negative Sampling, C. Dyer](https://arxiv.org/abs/1410.8251)
-* [4] [Approximating the Softmax (a blog post), S. Ruder](http://ruder.io/word-embeddings-softmax/index.html)
 * [5] [Distributed Representations of Sentences and Documents, Q. V. Le et al.](https://arxiv.org/abs/1405.4053)
 * [6] [Document Embedding with Paragraph Vectors, A. M. Dai et al.](https://arxiv.org/abs/1507.07998)
