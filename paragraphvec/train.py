@@ -156,7 +156,6 @@ def _run(data_file_name,
     if torch.cuda.is_available():
         model.cuda()
 
-
     print("Dataset comprised of {:d} documents.".format(len(dataset)))
     print("Vocabulary size is {:d}.\n".format(vocabulary_size))
     print("Training started.")

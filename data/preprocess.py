@@ -9,7 +9,7 @@ import random
 
 df_ingredients_info = pd.read_csv("./flavordb/D2_fdb_info.csv", sep=",")
 path_compounds_info = './flavordb/compounds_info.pkl'
-save_path = './flavordb_ver3.0.csv'
+save_path = './flavordb_ver3.1.csv'
 
 id2compound = './flavordb/id2compound.pkl'
 compound2id = './flavordb/compound2id.pkl'
@@ -30,7 +30,7 @@ for index, row in df_ingredients_info.iterrows():
         compounds_ids_clean.append(id.strip())
 
     if len(compounds_ids_clean) > 10:
-        for i in range(50):
+        for i in range(10):
             sampled_compounds_ids = random.sample(compounds_ids_clean, 10)
             #print(sampled_compounds_ids)
             sampled_compounds_ids = " ".join(sampled_compounds_ids)
